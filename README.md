@@ -2,8 +2,6 @@
  
 ### Dengan Penggunaan Page Object Model pada Automation Test
 
-[![Website shields.io]([https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPorta)
-
 ### Feature Website  :
 
 -Role-charles-Estevez
