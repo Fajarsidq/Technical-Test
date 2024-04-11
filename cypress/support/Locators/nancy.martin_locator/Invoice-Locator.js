@@ -6,9 +6,9 @@ module.exports = {
         click_fromDate: '#b5-Input > .input-date > .input',
         click_toDate: '#b7-Input > .input-date > .input',
         click_allStatus: '//div[@class="dropdown-display-content"]',
-        click_status: '//div[@class="dropdown-popup-row"]//span[contains(text(),"Unpaid")]',
+        click_status: '//div[@class="dropdown-popup-row"]//span[contains(text(),"paid")]',
         Assertion_status: '//div[@class="dropdown-display-content"]//span[contains(text(),"Unpaid")]',
-        click_reset: '//button[@type="button"]',
+        click_reset: '//button[normalize-space()="Reset"]',
         Assertion_invoice : '//div[@id="b1-Title"]',
         sort_ZtoA: 'Invoice',
         sort_AtoZ: 'Invoice',
@@ -22,6 +22,14 @@ module.exports = {
         detail_Invoice : '//span[normalize-space()="qwqwqw"]',
         Assertion_detail : '//span[@class="heading4 flex1 margin-bottom-m"]',
         back : '//span[@class="padding-left-xs"]',
-
+        buttonRequest:'//div[@id="ListInvoices_NewInvoice"]//button[@type="button"]',
+        inputInvoice: '//input[@id="Input_InvoiceNumber"]',
+        inputStartDate : '//input[@id="Input_PeriodStartDate"]',
+        inputEndDate : '//input[@id="Input_PeriodEndDate"]',
+        inputAmount : '//input[@id="Input_Amount"]',
+        clickSubmit : '//button[@type="submit"]',
+        AssertionErorrReq : '//span[@class="validation-message"]',
+        backToMenu : '//div[@id="b1-b2-ApplicationTitleWrapper"]//span[contains(text(),"Claim Portal")]'
+        
     }
 }

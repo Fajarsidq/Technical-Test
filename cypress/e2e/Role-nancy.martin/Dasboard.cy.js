@@ -1,5 +1,5 @@
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
+const DasboardPage = require('../../support/Pages/nancy.martin_page/Dasboard')
+const LoginPage = require('../../support/Pages/nancy.martin_page/Login')
 
 
 describe('DASBOARD charles.estevez (HC)', () => {

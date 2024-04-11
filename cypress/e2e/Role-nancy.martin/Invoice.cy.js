@@ -1,6 +1,7 @@
-const InvoicePage = require('../../support/Pages/charles_estevez_page/Invoice')
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
+const InvoicePage = require('../../support/Pages/nancy.martin_page/Invoice')
+const DasboardPage = require('../../support/Pages/nancy.martin_page/Dasboard')
+const LoginPage = require('../../support/Pages/nancy.martin_page/Login')
+const { ivory } = require('color-name')
 
 
 
@@ -14,6 +15,16 @@ describe('INVOICE', () => {
 
         InvoicePage.fiturSearchBox()
         InvoicePage.verifyContentsOfTheSearchbox()
+    })
+
+    it('Verify user tries to add a new request', () => {
+        InvoicePage.AddNewRequest()
+        InvoicePage.verifyPage()
+    })
+
+    it('Verify uses who try to add a new request without filling in any of the fields.', () => {
+        InvoicePage.AddRequestWithoutInovoiceNumber()
+        InvoicePage.verifyErorrRequest()
     })
 
     it('Verify user tries to search for data based on status on the status filter feature', () => {

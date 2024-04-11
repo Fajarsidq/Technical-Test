@@ -1,8 +1,8 @@
 
-const locator = require('../../Locators/charles_estevez_locator/Login-Locator')
-const InvoiceLocator = require('../../Locators/charles_estevez_locator/Invoice-Locator')
-const DasboardLocator = require('../../Locators/charles_estevez_locator/Dasboard-locator')
-const staticText = require('../../Static_text/charles_estevez_staticText/static_text')
+const locator = require('../../Locators/nancy.martin_locator/Login-Locator')
+const InvoiceLocator = require('../../Locators/nancy.martin_locator/Invoice-Locator')
+const DasboardLocator = require('../../Locators/nancy.martin_locator/Dasboard-locator')
+const staticText = require('../../Static_text/nancy.martin_staticText/static_text')
 
 class invoicePage {
 
@@ -24,6 +24,8 @@ class invoicePage {
 
     async dropDownStatus () {
         this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.backToMenu).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.click_NavbarInvoice).click( {force: true})
         cy.xpath(InvoiceLocator.datatestid.click_allStatus).click({force: true})
         cy.xpath(InvoiceLocator.datatestid.click_status).click({force: true})
         cy.wait(4000)
@@ -94,7 +96,36 @@ class invoicePage {
     }
 
 
+    async AddNewRequest () {
+        this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.buttonRequest).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputInvoice).type(staticText.data_static.Invoice,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputStartDate).type(staticText.data_static.startDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputEndDate).type(staticText.data_static.endDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputAmount).type(staticText.data_static.amount,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSubmit).click({force: true})
+
+        cy.wait(4000)
+    }
+
+    async AddRequestWithoutInovoiceNumber () {
+        this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.buttonRequest).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputStartDate).type(staticText.data_static.startDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputEndDate).type(staticText.data_static.endDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputAmount).type(staticText.data_static.amount,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSubmit).click({force: true})
+
+        cy.wait(4000)
+    }
+
+
+
     //Assertion
+
+    async verifyErorrRequest() {
+        cy.xpath(InvoiceLocator.datatestid.AssertionErorrReq).should('contain','This field is required.')
+    }
 
     async verifyContentsOfTheSearchbox() {
         cy.xpath(InvoiceLocator.datatestid.Assertion_searchBox).should('contain','qwqwqw')

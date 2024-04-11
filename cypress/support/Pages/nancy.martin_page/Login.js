@@ -1,5 +1,5 @@
-    const locator = require('../../Locators/charles_estevez_locator/Login-Locator')
-    const staticText = require('../../Static_text/charles_estevez_staticText/static_text')
+    const locator = require('../../Locators/nancy.martin_locator/Login-Locator')
+    const staticText = require('../../Static_text/nancy.martin_staticText/static_text')
 
     class loginPage {
         async visitToUrl () {
