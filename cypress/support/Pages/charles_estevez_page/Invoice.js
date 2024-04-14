@@ -93,6 +93,7 @@ class invoicePage {
     }
 
     async paginationNavigation () {
+        this.setupPage()
         cy.xpath(InvoiceLocator.datatestid.pagination_1).click({force: true})
         cy.wait(4000)
     }
@@ -115,6 +116,7 @@ class invoicePage {
     }
 
     async invalidSetUnpaid () {
+        this.setupPage()
         cy.xpath(InvoiceLocator.datatestid.clickSearchbox).type(staticText.data_static.searchBox3, {force: true}, {timeout: 10000})
         cy.xpath(InvoiceLocator.datatestid.invalidSetUnpaid).click({multiple: true},{force: true})
         cy.xpath(InvoiceLocator.datatestid.clickSetUnpaid).click({multiple: true},{force: true})

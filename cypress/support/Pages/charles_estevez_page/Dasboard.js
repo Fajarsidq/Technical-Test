@@ -5,35 +5,44 @@ const staticText = require('../../Static_text/charles_estevez_staticText/static_
 
 class dasboardPage {
 
+    async setupPage () {
+        cy.viewport(window.screen.width, window.screen.height)
+    }
+
     async footerTermsNconditions () {
+        this.setupPage()
         cy.xpath(DasboardLocator.datatestid.footer_TermsAndConditions).click({force: true})
         cy.wait(3000)
     }
 
     async footerPrivacyPolicy () {
+        this.setupPage()
         cy.xpath(DasboardLocator.datatestid.footer_PrivacyPolicy).click({force: true})
         cy.wait(3000)
     }
 
     async footerCookies () {
+        this.setupPage()
         cy.xpath(DasboardLocator.datatestid.footer_Cookies).click({force: true})
         cy.wait(3000)
     }
 
     async showMonthly () {
+        this.setupPage()
         cy.xpath(DasboardLocator.datatestid.back).click({force: true})
         cy.xpath(DasboardLocator.datatestid.show_monthly).click({force: true})
         cy.wait(3000)
     }
 
     async DetailProfile () {
+        this.setupPage()
         cy.xpath(DasboardLocator.datatestid.Click_UserProfile).click({force: true})
         cy.xpath(DasboardLocator.datatestid.Click_Profile).click({force: true}, {timeout: 10000})
         cy.wait(3000)
 
     }
 
-    async logout () {
+    async logout () {this.setupPage()
         cy.xpath(DasboardLocator.datatestid.Click_UserProfile).click({force: true}, {timeout: 10000})
         cy.xpath(DasboardLocator.datatestid.Click_logout).click({force: true}, {timeout: 10000})
         cy.wait(3000)
