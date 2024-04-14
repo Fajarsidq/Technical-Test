@@ -1,5 +1,5 @@
-    const locator = require('../../Locators/charles_estevez_locator/Login-Locator')
-    const staticText = require('../../Static_text/charles_estevez_staticText/static_text')
+    const locator = require('../../Locators/cecil.anderson _locator/Login-Locator')
+    const staticText = require('../../Static_text/cecil.anderson_staticText/static_text')
 
     class loginPage {
         async visitToUrl () {
@@ -54,7 +54,6 @@
         async verifyEmptyFieldErrorMessageAppears() {
             cy.xpath(locator.datatestid.Assertion_Req).should('contain','This field is required.')
         }
-        
         async verifyUserSuccessfullyLogin() {
             cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Dashboard')
         }
@@ -62,6 +61,8 @@
         async verifyLogin() {
             cy.xpath(locator.datatestid.AssertionLogin).should('contain','Log in to your account')
             }
+
+        
 
 }
 

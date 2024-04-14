@@ -1,7 +1,7 @@
 
-const locator = require('../../Locators/nancy.martin_locator/Login-Locator')
-const DasboardLocator = require('../../Locators/nancy.martin_locator/Dasboard-locator')
-const staticText = require('../../Static_text/nancy.martin_staticText/static_text')
+const locator = require('../../Locators/cecil.anderson _locator/Login-Locator')
+const DasboardLocator = require('../../Locators/cecil.anderson _locator/Dasboard-locator')
+const staticText = require('../../Static_text/cecil.anderson_staticText/static_text')
 
 class dasboardPage {
 

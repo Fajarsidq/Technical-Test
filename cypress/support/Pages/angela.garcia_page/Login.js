@@ -1,5 +1,5 @@
-    const locator = require('../../Locators/charles_estevez_locator/Login-Locator')
-    const staticText = require('../../Static_text/charles_estevez_staticText/static_text')
+    const locator = require('../../Locators/angela.garcia_locator/Login-Locator')
+    const staticText = require('../../Static_text/angela.garcia_staticText/static_text')
 
     class loginPage {
         async visitToUrl () {
@@ -58,11 +58,9 @@
         async verifyUserSuccessfullyLogin() {
             cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Dashboard')
         }
-
         async verifyLogin() {
-            cy.xpath(locator.datatestid.AssertionLogin).should('contain','Log in to your account')
-            }
-
+        cy.xpath(locator.datatestid.AssertionLogin).should('contain','Log in to your account')
+        }
 }
 
 module.exports = new loginPage()

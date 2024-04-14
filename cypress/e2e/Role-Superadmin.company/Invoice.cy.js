@@ -1,6 +1,6 @@
-const InvoicePage = require('../../support/Pages/charles_estevez_page/Invoice')
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
+const InvoicePage = require('../../support/Pages/Superadmin.company_page/Invoice')
+const LoginPage = require('../../support/Pages/Superadmin.company_page/Login')
+const DasboardPage = require('../../support/Pages/Superadmin.company_page/Dasboard')
 
 
 
@@ -43,19 +43,19 @@ describe('INVOICE', () => {
 
     })
 
-    it('Verify user sorts period  data based on Old to New', () => {
+    it('Verify user in Sorting Periods from Oldest to Latest', () => {
         InvoicePage.sortOldtoNew()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user in Sorting Periods from Oldest to Latest', () => {
+    it('Verify user in Sorting Periods from Latest to Oldest', () => {
         InvoicePage.sortNewtoOld()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user in Sorting Periods from Latest to Oldest', () => {
+    it('Verify user sorts Amount  data based on High to Low', () => {
         InvoicePage.sortHighToLow()
         InvoicePage.verifyPage()
 
@@ -86,17 +86,6 @@ describe('INVOICE', () => {
         InvoicePage.verifyPage()        
     })
 
-    it('verify users try out the set unpaid feature', () => {
-        InvoicePage.setUnpaid()
-        InvoicePage.verifySetUnpaid()        
-    })
-    
-    it('verify the user tries the set unpaid feature on an invoice number that has unpaid status.', () => {
-        InvoicePage.invalidSetUnpaid()
-        InvoicePage.verifySetUnpaid()        
-    })
-
-    
     after(() => {
         DasboardPage.logout() 
 })

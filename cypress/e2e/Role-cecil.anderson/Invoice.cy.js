@@ -1,6 +1,6 @@
-const InvoicePage = require('../../support/Pages/charles_estevez_page/Invoice')
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
+const InvoicePage = require('../../support/Pages/cecil.anderson_page/Invoice')
+const DasboardPage = require('../../support/Pages/cecil.anderson_page/Dasboard')
+const LoginPage = require('../../support/Pages/cecil.anderson_page/Login')
 
 
 
@@ -20,6 +20,16 @@ describe('INVOICE', () => {
     it('Verify user tries to search for data based on the period date on the search date feature.', () => {
         InvoicePage.selectDate()
         InvoicePage.verifyUrlInvoice()
+    })
+
+    it('Verify user tries to add a new request', () => {
+        InvoicePage.AddNewRequest()
+        InvoicePage.verifyPage()
+    })
+
+    it('Verify uses who try to add a new request without filling in any of the fields.', () => {
+        InvoicePage.AddRequestWithoutInovoiceNumber()
+        InvoicePage.verifyErorrRequest()
     })
 
     it('Verify user tries to search for data based on status on the status filter feature', () => {
@@ -49,13 +59,13 @@ describe('INVOICE', () => {
 
     })
 
-    it('Verify user in Sorting Periods from Oldest to Latest', () => {
+    it('Verify user sorts period  data based on New to Old', () => {
         InvoicePage.sortNewtoOld()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user in Sorting Periods from Latest to Oldest', () => {
+    it('Verify user sorts Amount  data based on High to Low', () => {
         InvoicePage.sortHighToLow()
         InvoicePage.verifyPage()
 
@@ -86,17 +96,6 @@ describe('INVOICE', () => {
         InvoicePage.verifyPage()        
     })
 
-    it('verify users try out the set unpaid feature', () => {
-        InvoicePage.setUnpaid()
-        InvoicePage.verifySetUnpaid()        
-    })
-    
-    it('verify the user tries the set unpaid feature on an invoice number that has unpaid status.', () => {
-        InvoicePage.invalidSetUnpaid()
-        InvoicePage.verifySetUnpaid()        
-    })
-
-    
     after(() => {
         DasboardPage.logout() 
 })

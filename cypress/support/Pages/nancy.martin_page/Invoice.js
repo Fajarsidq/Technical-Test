@@ -16,8 +16,19 @@ class invoicePage {
         cy.wait(4000)
     }
 
+    async selectDate  () {
+        this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.click_reset).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickFromDate).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.selectFromDate).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickToDate).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.selectToDate).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.wait(4000)
+    }
+
     async resetInput () {
         this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.click_SearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
         cy.xpath(InvoiceLocator.datatestid.click_reset).click({multiple: true},{force: true}, {timeout: 10000})
         cy.wait(4000)
     }
@@ -147,6 +158,9 @@ class invoicePage {
         cy.xpath(InvoiceLocator.datatestid.Assertion_detail).should('contain','Overview')
     }
 
+    async verifyUrlInvoice() {
+        cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Invoices')
+    }
 
 }
 

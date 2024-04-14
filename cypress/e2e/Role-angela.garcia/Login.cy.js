@@ -1,5 +1,5 @@
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
+const LoginPage = require('../../support/Pages/angela.garcia_page/Login')
+const DasboardPage = require('../../support/Pages/angela.garcia_page/Dasboard')
 
 
 describe('Login', () => {

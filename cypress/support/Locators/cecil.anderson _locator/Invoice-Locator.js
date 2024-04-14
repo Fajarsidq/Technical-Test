@@ -18,8 +18,8 @@ module.exports = {
         sort_LowToHigh: 'Amount',
         sort_PaidToUnpaid: 'Status',
         sort_UnpaidToPaid: 'Status',
-        pagination_1 : '//div[@class="display-flex"]//button[@aria-label="page 1"]',
-        detail_Invoice : '//span[normalize-space()="qwqwqw"]',
+        pagination_1 : '//*[@aria-label="go to page 3"]',
+        detail_Invoice : '//span[normalize-space()="101009"]',
         Assertion_detail : '//span[@class="heading4 flex1 margin-bottom-m"]',
         back : '//span[@class="padding-left-xs"]',
         buttonRequest:'//div[@id="ListInvoices_NewInvoice"]//button[@type="button"]',
@@ -33,7 +33,8 @@ module.exports = {
         selectFromDate: '(//span[@class="flatpickr-day"])[7]',
         clickFromDate : '//div[@id="ListInvoices_StartInput"]//input[2]',
         clickToDate: '//input[@class="form-control OSFillParent input"]',
-        selectToDate: '(//span[@aria-label="April 14, 2024"][normalize-space()="14"])[2]'
+        selectToDate: '(//span[@aria-label="April 14, 2024"][normalize-space()="14"])[2]',
+        
         
     }
 }

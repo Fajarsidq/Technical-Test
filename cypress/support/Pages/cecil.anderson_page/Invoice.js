@@ -1,8 +1,8 @@
 
-const locator = require('../../Locators/charles_estevez_locator/Login-Locator')
-const InvoiceLocator = require('../../Locators/charles_estevez_locator/Invoice-Locator')
-const DasboardLocator = require('../../Locators/charles_estevez_locator/Dasboard-locator')
-const staticText = require('../../Static_text/charles_estevez_staticText/static_text')
+const locator = require('../../Locators/cecil.anderson _locator/Login-Locator')
+const InvoiceLocator = require('../../Locators/cecil.anderson _locator/Invoice-Locator')
+const DasboardLocator = require('../../Locators/cecil.anderson _locator/Dasboard-locator')
+const staticText = require('../../Static_text/cecil.anderson_staticText/static_text')
 
 class invoicePage {
 
@@ -15,7 +15,7 @@ class invoicePage {
         cy.xpath(InvoiceLocator.datatestid.click_SearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
         cy.wait(4000)
     }
-    
+
     async selectDate  () {
         this.setupPage()
         cy.xpath(InvoiceLocator.datatestid.click_reset).click({multiple: true},{force: true}, {timeout: 10000})
@@ -33,9 +33,10 @@ class invoicePage {
         cy.wait(4000)
     }
 
-
     async dropDownStatus () {
         this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.backToMenu).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.click_NavbarInvoice).click( {force: true})
         cy.xpath(InvoiceLocator.datatestid.click_allStatus).click({force: true})
         cy.xpath(InvoiceLocator.datatestid.click_status).click({force: true})
         cy.wait(4000)
@@ -80,7 +81,7 @@ class invoicePage {
 
     async sortPaidToUnpaid () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.back).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.back).click({force: true})
         cy.xpath(InvoiceLocator.datatestid.click_SearchBox).clear()
         cy.contains(InvoiceLocator.datatestid.sort_PaidToUnpaid).click({force: true})
         cy.wait(4000)
@@ -93,6 +94,7 @@ class invoicePage {
     }
 
     async paginationNavigation () {
+        this.setupPage()
         cy.xpath(InvoiceLocator.datatestid.pagination_1).click({force: true})
         cy.wait(4000)
     }
@@ -104,36 +106,43 @@ class invoicePage {
         cy.wait(4000)
     }
 
-    async setUnpaid () {
+
+    async AddNewRequest () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.clickSearchbox).type(staticText.data_static.searchBox2, {force: true}, {timeout: 10000})
-        cy.xpath(InvoiceLocator.datatestid.click_allStatus).click({multiple: true},{force: true})
-        cy.xpath(InvoiceLocator.datatestid.Submit).click({multiple: true},{force: true})
-        cy.xpath(InvoiceLocator.datatestid.invoiceSubmit).click({multiple: true},{force: true})
-        cy.xpath(InvoiceLocator.datatestid.clickSetUnpaid).click({multiple: true},{force: true})
+        cy.xpath(InvoiceLocator.datatestid.buttonRequest).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputInvoice).type(staticText.data_static.Invoice,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputStartDate).type(staticText.data_static.startDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputEndDate).type(staticText.data_static.endDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputAmount).type(staticText.data_static.amount,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSubmit).click({force: true})
         cy.wait(4000)
     }
 
-    async invalidSetUnpaid () {
-        cy.xpath(InvoiceLocator.datatestid.clickSearchbox).type(staticText.data_static.searchBox3, {force: true}, {timeout: 10000})
-        cy.xpath(InvoiceLocator.datatestid.invalidSetUnpaid).click({multiple: true},{force: true})
-        cy.xpath(InvoiceLocator.datatestid.clickSetUnpaid).click({multiple: true},{force: true})
+    async AddRequestWithoutInovoiceNumber () {
+        this.setupPage()
+        cy.xpath(InvoiceLocator.datatestid.buttonRequest).click( {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputStartDate).type(staticText.data_static.startDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputEndDate).type(staticText.data_static.endDate , {force: true})
+        cy.xpath(InvoiceLocator.datatestid.inputAmount).type(staticText.data_static.amount,{force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSubmit).click({force: true})
+
         cy.wait(4000)
     }
+
 
 
     //Assertion
 
-    async verifySetUnpaid() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
+    async verifyErorrRequest() {
+        cy.xpath(InvoiceLocator.datatestid.AssertionErorrReq).should('contain','This field is required.')
     }
 
     async verifyContentsOfTheSearchbox() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_searchBox).should('contain','qwqwqw')
+        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
     }
 
     async verifyContentsOfDropdown() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_status).should('contain','Unpaid')
+        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
     }
 
     async verifyResetStatus() {
@@ -147,10 +156,10 @@ class invoicePage {
     async verifyDetailInvoice() {
         cy.xpath(InvoiceLocator.datatestid.Assertion_detail).should('contain','Overview')
     }
+
     async verifyUrlInvoice() {
         cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Invoices')
     }
-
 
 }
 

@@ -7,5 +7,6 @@ module.exports = {
         Assertion_Req : '//span[@class="validation-message"]',
         Assertion_erorr : '//div[@class="feedback-message-text"]',
         AssertionLogin : '(//span[@class="heading5 text-neutral-8"])[1]'
+        
     }
 }

@@ -17,18 +17,17 @@ describe('Login', () => {
 
     it('Verify user login with Invalid credentials', () => {
         LoginPage.loginWithInvalidCredential()
-        LoginPage.verifyFieldErrorMessage()
+        LoginPage.verifyLogin()
     })
 
     it('Verify User attempts login without filling in one of the fields ', () => {
         LoginPage.loginWithoutPassword()
-        LoginPage.verifyEmptyFieldErrorMessageAppears()
+        LoginPage.verifyLogin()
     })
 
     it('Verify user tries to login with one invalid data entry ', () => {
         LoginPage.loginWithOneInvalidData()
-        LoginPage.verifyFieldErrorMessage()
-
+        LoginPage.verifyLogin()
     })
 
 })

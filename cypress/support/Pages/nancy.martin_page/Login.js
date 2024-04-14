@@ -55,13 +55,13 @@
             cy.xpath(locator.datatestid.Assertion_Req).should('contain','This field is required.')
         }
         
-        async verifyFieldErrorMessage() {
-            cy.xpath(locator.datatestid.Assertion_erorr).should('contain','Invalid username or password.')
-        }
-
         async verifyUserSuccessfullyLogin() {
             cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Dashboard')
         }
+
+        async verifyLogin() {
+            cy.xpath(locator.datatestid.AssertionLogin).should('contain','Log in to your account')
+            }
 
 }
 

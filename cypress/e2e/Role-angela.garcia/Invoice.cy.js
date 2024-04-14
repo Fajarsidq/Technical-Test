@@ -1,6 +1,6 @@
-const InvoicePage = require('../../support/Pages/charles_estevez_page/Invoice')
-const LoginPage = require('../../support/Pages/charles_estevez_page/Login')
-const DasboardPage = require('../../support/Pages/charles_estevez_page/Dasboard')
+const InvoicePage = require('../../support/Pages/angela.garcia_page/Invoice')
+const LoginPage = require('../../support/Pages/angela.garcia_page/Login')
+const DasboardPage = require('../../support/Pages/angela.garcia_page/Dasboard')
 
 
 
@@ -43,19 +43,19 @@ describe('INVOICE', () => {
 
     })
 
-    it('Verify user sorts period  data based on Old to New', () => {
+    it('Verify user in Sorting Periods from Oldest to Latest', () => {
         InvoicePage.sortOldtoNew()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user in Sorting Periods from Oldest to Latest', () => {
+    it('Verify user in Sorting Periods from Latest to Oldest', () => {
         InvoicePage.sortNewtoOld()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user in Sorting Periods from Latest to Oldest', () => {
+    it('Verify user sorts Amount  data based on High to Low', () => {
         InvoicePage.sortHighToLow()
         InvoicePage.verifyPage()
 
@@ -86,17 +86,27 @@ describe('INVOICE', () => {
         InvoicePage.verifyPage()        
     })
 
-    it('verify users try out the set unpaid feature', () => {
-        InvoicePage.setUnpaid()
-        InvoicePage.verifySetUnpaid()        
-    })
-    
-    it('verify the user tries the set unpaid feature on an invoice number that has unpaid status.', () => {
-        InvoicePage.invalidSetUnpaid()
-        InvoicePage.verifySetUnpaid()        
+    it('verify user creates pay bill', () => {
+        InvoicePage.addPayBill()
+        InvoicePage.verifyPayBill()        
     })
 
-    
+    it('user verification create payment bill fill name on card with number', () => {
+        InvoicePage.addPayBillfillwithNumber()
+        InvoicePage.verifyPayBill()        
+    })
+
+    it('verify user creates a payment bill fills in the CVV number that does not match the card number.', () => {
+        InvoicePage.addPayBillwithInvalidCVV()
+        InvoicePage.verifyPayBill()        
+    })
+
+    it('verify user creates pay bill fills in name on card with single name', () => {
+        InvoicePage.addPayBillwithInvalidNameOnCard()
+        InvoicePage.verifyPayBillInvalidName()        
+    })
+
+
     after(() => {
         DasboardPage.logout() 
 })

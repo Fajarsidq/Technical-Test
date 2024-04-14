@@ -1,7 +1,6 @@
 const InvoicePage = require('../../support/Pages/nancy.martin_page/Invoice')
 const DasboardPage = require('../../support/Pages/nancy.martin_page/Dasboard')
 const LoginPage = require('../../support/Pages/nancy.martin_page/Login')
-const { ivory } = require('color-name')
 
 
 
@@ -15,6 +14,12 @@ describe('INVOICE', () => {
 
         InvoicePage.fiturSearchBox()
         InvoicePage.verifyContentsOfTheSearchbox()
+        InvoicePage.verifyUrlInvoice()
+    })
+
+    it('Verify user tries to search for data based on the period date on the search date feature.', () => {
+        InvoicePage.selectDate()
+        InvoicePage.verifyUrlInvoice()
     })
 
     it('Verify user tries to add a new request', () => {
@@ -48,13 +53,13 @@ describe('INVOICE', () => {
 
     })
 
-    it('Verify user sorts period  data based on Old to New', () => {
+    it('Verify user in Sorting Periods from Oldest to Latest', () => {
         InvoicePage.sortOldtoNew()
         InvoicePage.verifyPage()
 
     })
 
-    it('Verify user sorts period  data based on New to Old', () => {
+    it('Verify user in Sorting Periods from Latest to Oldest', () => {
         InvoicePage.sortNewtoOld()
         InvoicePage.verifyPage()
 
@@ -71,7 +76,7 @@ describe('INVOICE', () => {
         InvoicePage.verifyPage()        
     })
 
-    it('Verify user tries to view Invoice details', () => {
+    it('Verify user tries to show Invoice details', () => {
         InvoicePage.detailInvoiceNumber()
         InvoicePage.verifyDetailInvoice()        
     })

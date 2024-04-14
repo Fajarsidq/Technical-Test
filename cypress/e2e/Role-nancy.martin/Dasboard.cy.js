@@ -2,7 +2,7 @@ const DasboardPage = require('../../support/Pages/nancy.martin_page/Dasboard')
 const LoginPage = require('../../support/Pages/nancy.martin_page/Login')
 
 
-describe('DASBOARD charles.estevez (HC)', () => {
+describe('DASBOARD', () => {
 
   before(() => {
     LoginPage.loginWithValidCredential()
@@ -28,7 +28,7 @@ describe('DASBOARD charles.estevez (HC)', () => {
 
     })
 
-    it('Verify user tries to view the Profile feature ', () => {
+    it('Verify user tries to show the Profile feature ', () => {
 
       DasboardPage.DetailProfile()
       DasboardPage.verifyDetailProfile()
