@@ -4,7 +4,7 @@ This repository contains a demonstration of automation testing using the Page Ob
 
 ### Feature Website  :
 
-1. ole: Charles Estevez
+1. Role: Charles Estevez
 2. Role: Cecil Anderson
 3. Role: Angela Garcia
 4. Role: Nancy Martin
@@ -29,7 +29,8 @@ npm install
 
 ### Cypress Graphical User Interface (GUI)
 
-To run tests using the Cypress graphical user interface (GUI), execute the following command:
+To run tests using the Cypress graphical user interface (GUI),
+ execute the following command:
 
 ```sh
 npx cypress open 
@@ -37,7 +38,8 @@ npx cypress open
  
 ### Non-Interactive Mode (Headless Mode)
 
-To run Cypress tests in non-interactive mode or headless mode, use the following command:
+To run Cypress tests in non-interactive mode or headless mode,
+use the following command:
 
 ```sh
 npx cypress run
