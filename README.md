@@ -1,6 +1,9 @@
-﻿# Technical Test: Automation Testing using Page Object Model
+﻿# Technical Testing:  Automation Testing With Cypress using the Page Object Model 
  
-This repository contains a demonstration of automation testing using the Page Object Model (POM) approach.
+ 
+This repository contains a demonstration of automation testing using the Page Object Model (POM) approach using the Cypres Automation Tool.
+
+ 
 
 ### Feature Website  :
 

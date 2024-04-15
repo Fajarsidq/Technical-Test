@@ -11,14 +11,14 @@ class invoicePage {
     }
     async fiturSearchBox () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.click_NavbarInvoice).click({force: true})
-        cy.xpath(InvoiceLocator.datatestid.click_SearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickNavbarInvoice).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
         cy.wait(4000)
     }
     
     async selectDate  () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.click_reset).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickReset).click({multiple: true},{force: true}, {timeout: 10000})
         cy.xpath(InvoiceLocator.datatestid.clickFromDate).click({multiple: true},{force: true}, {timeout: 10000})
         cy.xpath(InvoiceLocator.datatestid.selectFromDate).click({multiple: true},{force: true}, {timeout: 10000})
         cy.xpath(InvoiceLocator.datatestid.clickToDate).click({multiple: true},{force: true}, {timeout: 10000})
@@ -28,87 +28,87 @@ class invoicePage {
 
     async resetInput () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.click_SearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
-        cy.xpath(InvoiceLocator.datatestid.click_reset).click({multiple: true},{force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickSearchBox).type(staticText.data_static.searchBox, {force: true}, {timeout: 10000})
+        cy.xpath(InvoiceLocator.datatestid.clickReset).click({multiple: true},{force: true}, {timeout: 10000})
         cy.wait(4000)
     }
 
 
     async dropDownStatus () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.click_allStatus).click({force: true})
-        cy.xpath(InvoiceLocator.datatestid.click_status).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickAllStatus).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickStatus).click({force: true})
         cy.wait(4000)
     }
 
 
     async sortZtoA () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_ZtoA).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortZtoA).click({force: true})
         cy.wait(4000)
     }
 
     async sortAtoZ () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_AtoZ).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortAtoZ).click({force: true})
         cy.wait(4000)
     }
 
     async sortOldtoNew () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_OldtoNew).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortOldtoNew).click({force: true})
         cy.wait(4000)
     }
 
     async sortNewtoOld () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_NewtoOld).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortNewtoOld).click({force: true})
         cy.wait(4000)
     }
 
     async sortHighToLow () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_HighToLow).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortHighToLow).click({force: true})
         cy.wait(4000)
     }
 
     async sortLowToHigh () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_LowToHigh).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortLowToHigh).click({force: true})
         cy.wait(4000)
     }
 
     async sortPaidToUnpaid () {
         this.setupPage()
         cy.contains(InvoiceLocator.datatestid.back).click({force: true})
-        cy.xpath(InvoiceLocator.datatestid.click_SearchBox).clear()
-        cy.contains(InvoiceLocator.datatestid.sort_PaidToUnpaid).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSearchBox).clear()
+        cy.contains(InvoiceLocator.datatestid.sortPaidToUnpaid).click({force: true})
         cy.wait(4000)
     }
 
     async sortUnpaidToPaid () {
         this.setupPage()
-        cy.contains(InvoiceLocator.datatestid.sort_UnpaidToPaid).click({force: true})
+        cy.contains(InvoiceLocator.datatestid.sortUnpaidToPaid).click({force: true})
         cy.wait(4000)
     }
 
     async paginationNavigation () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.pagination_1).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.pagination1).click({force: true})
         cy.wait(4000)
     }
 
     async detailInvoiceNumber () {
         this.setupPage()
-        cy.xpath(InvoiceLocator.datatestid.click_SearchBox).type(staticText.data_static.searchBox, {force: true})
-        cy.xpath(InvoiceLocator.datatestid.detail_Invoice).click({force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickSearchBox).type(staticText.data_static.searchBox, {force: true})
+        cy.xpath(InvoiceLocator.datatestid.detailInvoice).click({force: true})
         cy.wait(4000)
     }
 
     async setUnpaid () {
         this.setupPage()
         cy.xpath(InvoiceLocator.datatestid.clickSearchbox).type(staticText.data_static.searchBox2, {force: true}, {timeout: 10000})
-        cy.xpath(InvoiceLocator.datatestid.click_allStatus).click({multiple: true},{force: true})
+        cy.xpath(InvoiceLocator.datatestid.clickAllStatus).click({multiple: true},{force: true})
         cy.xpath(InvoiceLocator.datatestid.Submit).click({multiple: true},{force: true})
         cy.xpath(InvoiceLocator.datatestid.invoiceSubmit).click({multiple: true},{force: true})
         cy.xpath(InvoiceLocator.datatestid.clickSetUnpaid).click({multiple: true},{force: true})
@@ -127,27 +127,27 @@ class invoicePage {
     //Assertion
 
     async verifySetUnpaid() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
+        cy.xpath(InvoiceLocator.datatestid.AssertionInvoice).should('contain','Invoices')
     }
 
     async verifyContentsOfTheSearchbox() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_searchBox).should('contain','qwqwqw')
+        cy.xpath(InvoiceLocator.datatestid.AssertionSearchBox).should('contain','qwqwqw')
     }
 
     async verifyContentsOfDropdown() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_status).should('contain','Unpaid')
+        cy.xpath(InvoiceLocator.datatestid.AssertionStatus).should('contain','Unpaid')
     }
 
     async verifyResetStatus() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
+        cy.xpath(InvoiceLocator.datatestid.AssertionInvoice).should('contain','Invoices')
     }
 
     async verifyPage() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_invoice).should('contain','Invoices')
+        cy.xpath(InvoiceLocator.datatestid.AssertionInvoice).should('contain','Invoices')
     }
 
     async verifyDetailInvoice() {
-        cy.xpath(InvoiceLocator.datatestid.Assertion_detail).should('contain','Overview')
+        cy.xpath(InvoiceLocator.datatestid.AssertionDetail).should('contain','Overview')
     }
     async verifyUrlInvoice() {
         cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Invoices')

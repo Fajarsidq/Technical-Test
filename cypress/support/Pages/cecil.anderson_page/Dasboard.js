@@ -12,59 +12,59 @@ class dasboardPage {
 
     async footerTermsNconditions () {
         this.setupPage()
-        cy.xpath(DasboardLocator.datatestid.footer_TermsAndConditions).click({force: true})
+        cy.xpath(DasboardLocator.datatestid.footerTermsAndConditions).click({force: true})
         cy.wait(3000)
     }
 
     async footerPrivacyPolicy () {
         this.setupPage()
-        cy.xpath(DasboardLocator.datatestid.footer_PrivacyPolicy).click({force: true})
+        cy.xpath(DasboardLocator.datatestid.footerPrivacyPolicy).click({force: true})
         cy.wait(3000)
     }
 
     async footerCookies () {
         this.setupPage()
-        cy.xpath(DasboardLocator.datatestid.footer_Cookies).click({force: true})
+        cy.xpath(DasboardLocator.datatestid.footerCookies).click({force: true})
         cy.wait(3000)
     }
 
     async showMonthly () {
         this.setupPage()
         cy.xpath(DasboardLocator.datatestid.back).click({force: true})
-        cy.xpath(DasboardLocator.datatestid.show_monthly).click({force: true})
+        cy.xpath(DasboardLocator.datatestid.showMonthly).click({force: true})
         cy.wait(3000)
     }
 
     async DetailProfile () {
         this.setupPage()
-        cy.xpath(DasboardLocator.datatestid.Click_UserProfile).click({force: true})
-        cy.xpath(DasboardLocator.datatestid.Click_Profile).click({force: true}, {timeout: 10000})
+        cy.xpath(DasboardLocator.datatestid.ClickUserProfile).click({force: true})
+        cy.xpath(DasboardLocator.datatestid.ClickProfile).click({force: true}, {timeout: 10000})
         cy.wait(3000)
 
     }
 
     async logout () {this.setupPage()
-        cy.xpath(DasboardLocator.datatestid.Click_UserProfile).click({force: true}, {timeout: 10000})
-        cy.xpath(DasboardLocator.datatestid.Click_logout).click({force: true}, {timeout: 10000})
+        cy.xpath(DasboardLocator.datatestid.ClickUserProfile).click({force: true}, {timeout: 10000})
+        cy.xpath(DasboardLocator.datatestid.ClickLogout).click({force: true}, {timeout: 10000})
         cy.wait(3000)
     }
 
     //Assertion
 
     async verifyFooter() {
-        cy.xpath(DasboardLocator.datatestid.assertion_footer).should('contain','Feature not implemented. Create your own action or navigate to a diferent screen.')
+        cy.xpath(DasboardLocator.datatestid.assertionFooter).should('contain','Feature not implemented. Create your own action or navigate to a diferent screen.')
     }
 
     async verifyDetailProfile() {
-        cy.xpath(DasboardLocator.datatestid.assertion_dasboard).should('contain','User profile')
+        cy.xpath(DasboardLocator.datatestid.assertionDasboard).should('contain','User profile')
     }
 
     async verifyShowMonthly() {
-        cy.xpath(DasboardLocator.datatestid.assertion_dasboard).should('contain','Dashboard')
+        cy.xpath(DasboardLocator.datatestid.assertionDasboard).should('contain','Dashboard')
     }
 
     async verifyLogout() {
-        cy.xpath(DasboardLocator.datatestid.assertion_login).should('contain','Log in to your account')
+        cy.xpath(DasboardLocator.datatestid.assertionLogin).should('contain','Log in to your account')
     }
 }
 

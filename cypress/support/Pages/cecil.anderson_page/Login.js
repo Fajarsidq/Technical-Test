@@ -9,16 +9,16 @@
 
         async userLogin(username, password) {
             this.visitToUrl()
-            cy.xpath(locator.datatestid.username_input).type(username).should('be.visible', {timeout: 10000})
-            cy.xpath(locator.datatestid.password_input).type(password).should('be.visible', {timeout: 10000})
-            cy.xpath(locator.datatestid.login_button).click({force: true})
+            cy.xpath(locator.datatestid.usernameInput).type(username).should('be.visible', {timeout: 10000})
+            cy.xpath(locator.datatestid.passwordInput).type(password).should('be.visible', {timeout: 10000})
+            cy.xpath(locator.datatestid.loginButton).click({force: true})
             cy.wait(3000)
         }
 
         async userLoginUsername(username) {
             this.visitToUrl()
-            cy.xpath(locator.datatestid.username_input).type(username).should('be.visible', {timeout: 10000})
-            cy.xpath(locator.datatestid.login_button).click({force: true})
+            cy.xpath(locator.datatestid.usernameInput).type(username).should('be.visible', {timeout: 10000})
+            cy.xpath(locator.datatestid.loginButton).click({force: true})
             cy.wait(3000)
         }
 
@@ -46,13 +46,13 @@
         }
         
         async loginWithoutUsernameAndPassword() {
-            cy.xpath(locator.datatestid.login_button).click({force: true})
+            cy.xpath(locator.datatestid.loginButton).click({force: true})
             cy.wait(3000)
         }
         
         // Assertion 
         async verifyEmptyFieldErrorMessageAppears() {
-            cy.xpath(locator.datatestid.Assertion_Req).should('contain','This field is required.')
+            cy.xpath(locator.datatestid.AssertionReq).should('contain','This field is required.')
         }
         async verifyUserSuccessfullyLogin() {
             cy.url().should('eq', 'https://samaktamitrapt-dev.outsystemsenterprise.com/ClaimPortal/Dashboard')

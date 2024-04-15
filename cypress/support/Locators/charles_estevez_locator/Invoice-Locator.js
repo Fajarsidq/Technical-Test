@@ -1,26 +1,22 @@
 module.exports = {
     datatestid: {
-        click_NavbarInvoice: '//a[@class=" margin-left-m"]',
-        click_SearchBox: '//input[@id="Input_SearchKeyword"]',
-        Assertion_searchBox : '//span[normalize-space()="qwqwqw"]',
-        click_fromDate: '#b5-Input > .input-date > .input',
-        click_toDate: '#b7-Input > .input-date > .input',
-        click_allStatus: '//div[@class="dropdown-display-content"]',
-        click_status: '//div[@class="dropdown-popup-row"]//span[contains(text(),"Unpaid")]',
-        Assertion_status: '//div[@class="dropdown-display-content"]//span[contains(text(),"Unpaid")]',
-        click_reset: '(//button[normalize-space()="Reset"])[1]',
-        Assertion_invoice : '//div[@id="b1-Title"]',
-        sort_ZtoA: 'Invoice',
-        sort_AtoZ: 'Invoice',
-        sort_NewtoOld: 'Period',
-        sort_OldtoNew: 'Period',
-        sort_HighToLow: 'Amount',
-        sort_LowToHigh: 'Amount',
-        sort_PaidToUnpaid: 'Status',
-        sort_UnpaidToPaid: 'Status',
-        pagination_1 : '//div[@class="display-flex"]//button[@aria-label="page 1"]',
-        detail_Invoice : '//span[normalize-space()="qwqwqw"]',
-        Assertion_detail : '//span[@class="heading4 flex1 margin-bottom-m"]',
+        clickNavbarInvoice: '//a[@class=" margin-left-m"]',
+        clickSearchBox: '//input[@id="Input_SearchKeyword"]',
+        clickFromDate: '#b5-Input > .input-date > .input',
+        clickToDate: '#b7-Input > .input-date > .input',
+        clickAllStatus: '//div[@class="dropdown-display-content"]',
+        clickStatus: '//div[@class="dropdown-popup-row"]//span[contains(text(),"Unpaid")]',
+        clickReset: '(//button[normalize-space()="Reset"])[1]',
+        sortZtoA: 'Invoice',
+        sortAtoZ: 'Invoice',
+        sortNewtoOld: 'Period',
+        sortOldtoNew: 'Period',
+        sortHighToLow: 'Amount',
+        sortLowToHigh: 'Amount',
+        sortPaidToUnpaid: 'Status',
+        sortUnpaidToPaid: 'Status',
+        pagination1 : '//div[@class="display-flex"]//button[@aria-label="page 1"]',
+        detailInvoice : '//span[normalize-space()="qwqwqw"]',
         back : 'Back',
         selectFromDate: '(//span[@class="flatpickr-day"])[7]',
         clickFromDate : '//div[@id="ListInvoices_StartInput"]//input[2]',
@@ -31,8 +27,14 @@ module.exports = {
         clickSetUnpaid: '(//button[normalize-space()="Set Unpaid"])[1]',
         clickSearchbox: '//input[@id="Input_SearchKeyword"]',
         Submit : '//div[@class="dropdown-list"]//div[4]',
-        invalidSetUnpaid: '//span[normalize-space()="wq"]'
+        invalidSetUnpaid: '//span[normalize-space()="wq"]',
 
-
+    //Assertion
+        AssertionDetail : '//span[@class="heading4 flex1 margin-bottom-m"]',
+        AssertionStatus: '//div[@class="dropdown-display-content"]//span[contains(text(),"Unpaid")]',
+        AssertionSearchBox : '//span[normalize-space()="qwqwqw"]',
+        AssertionInvoice : '//div[@id="b1-Title"]',
+        
+        
     }
 }

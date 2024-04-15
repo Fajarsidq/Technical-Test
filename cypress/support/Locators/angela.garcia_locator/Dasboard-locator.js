@@ -1,15 +1,17 @@
 module.exports = {
     datatestid: {
-        footer_TermsAndConditions: '//a[normalize-space()="Terms and Conditions"]',
-        footer_PrivacyPolicy: '//a[normalize-space()="Privacy Policy"]',
-        footer_Cookies : '//a[normalize-space()="Cookies"]',
-        Click_UserProfile : '//span[@id="b2-b3-User_Username"]',
-        Click_Profile : '//a[normalize-space()="Profile"]',
-        Click_logout : '//a[normalize-space()="Log out"]',
-        assertion_footer: '//div[@class="feedback-message-text"]',
-        assertion_dasboard: '//div[@id="b1-Title"]',
-        assertion_login: '//span[@class="heading5 text-neutral-8"]',
-        show_monthly :'//button[@aria-label="Show Monthly"]',
-        back : '//div[@id="b1-b2-ApplicationTitleWrapper"]//span[contains(text(),"Claim Portal")]'
+        footerTermsAndConditions: '//a[normalize-space()="Terms and Conditions"]',
+        footerPrivacyPolicy: '//a[normalize-space()="Privacy Policy"]',
+        footerCookies : '//a[normalize-space()="Cookies"]',
+        ClickUserProfile : '//span[@id="b2-b3-User_Username"]',
+        ClickProfile : '//a[normalize-space()="Profile"]',
+        ClickLogout : '//a[normalize-space()="Log out"]',
+        showMonthly :'//button[@aria-label="Show Monthly"]',
+        back : '//div[@id="b1-b2-ApplicationTitleWrapper"]//span[contains(text(),"Claim Portal")]',
+
+    //Assertion
+        assertionFooter: '//div[@class="feedback-message-text"]',
+        assertionDasboard: '//div[@id="b1-Title"]',
+        assertionLogin: '//span[@class="heading5 text-neutral-8"]',
     }
 }
